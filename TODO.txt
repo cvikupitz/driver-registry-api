@@ -1,0 +1,5 @@
+- Swagger
+- Caching
+- Security
+- Authentication (by endpoint)
+- Resilience4J

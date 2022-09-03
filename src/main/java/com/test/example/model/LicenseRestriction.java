@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(schema = "vehicle-registry", catalog = "driver-registry", name = "LICENSE_RESTRICTION")
+@Table(name = "LICENSE_RESTRICTION")
 public class LicenseRestriction implements Serializable {
 
   @Id

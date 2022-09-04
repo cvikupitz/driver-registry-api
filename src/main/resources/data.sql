@@ -43,12 +43,13 @@ INSERT INTO DRIVER_GENDER
 
 INSERT INTO DRIVER_RACE
     (_ID, ABBREVIATION, DESCRIPTION) VALUES
-  (501, 'A', 'Asian/Pacific Islander'),
+  (501, 'W', 'White'),
   (502, 'B', 'Black'),
-  (503, 'W', 'White'),
-  (504, 'H', 'Hispanic'),
-  (505, 'I', 'Native American/Alaskan Native'),
-  (506, 'U', 'Other/Unknown');
+  (503, 'I', 'Native American/Alaskan Native'),
+  (504, 'A', 'Asian')
+  (505, 'H', 'Hispanic'),
+  (506, 'I', 'Native Hawaiian/Pacific Islander'),
+  (507, 'U', 'Other/Unknown');
 
 INSERT INTO DRIVER_HAIR_COLOR
     (_ID, ABBREVIATION, DESCRIPTION) VALUES

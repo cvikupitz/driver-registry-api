@@ -1,6 +1,7 @@
 package com.test.example.dto.driver;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.test.example.dto.metadata.MetadataDto;
 import java.sql.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -45,16 +46,16 @@ public class DriverDto {
   private String postalCode;
 
   @JsonProperty("Gender")
-  private String gender;
+  private MetadataDto gender;
 
   @JsonProperty("Race")
-  private String race;
+  private MetadataDto race;
 
   @JsonProperty("HairColor")
-  private String hairColor;
+  private MetadataDto hairColor;
 
   @JsonProperty("EyeColor")
-  private String eyeColor;
+  private MetadataDto eyeColor;
 
   @JsonProperty("HeightInches")
   private Short heightIns;

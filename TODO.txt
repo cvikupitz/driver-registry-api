@@ -1,3 +1,4 @@
+- Valid groups
 - Swagger
 - Caching
 - Security

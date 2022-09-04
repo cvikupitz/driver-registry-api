@@ -15,6 +15,8 @@ management:
         include: health, info, metrics
 # Spring root configurations
 spring:
+  jackson:
+    date-format: dd-MM-yyyy
   datasource:
     url: jdbc:h2:mem:testdb
     username: sa

@@ -1,9 +1,5 @@
 package com.test.example.dto.driver;
 
-import com.test.example.enums.EyeColor;
-import com.test.example.enums.Gender;
-import com.test.example.enums.HairColor;
-import com.test.example.enums.Race;
 import java.sql.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,20 +11,37 @@ import lombok.NoArgsConstructor;
 public class DriverGenericSearchRequest {
 
   private String ssn;
+
   private String firstName;
+
   private String middleName;
+
   private String lastName;
+
   private Date dateOfBirth;
+
   private String addresLine1;
+
   private String addresLine2;
+
   private String city;
+
   private String state;
+
   private String postalCode;
-  private Gender gender;
-  private Race race;
-  private HairColor hairColor;
-  private EyeColor eyeColor;
+
+//  private Gender gender;
+//
+//  private Race race;
+//
+//  private HairColor hairColor;
+//
+//  private EyeColor eyeColor;
+
   private Short heightIns;
+
   private Short weightLbs;
+
   private Integer maxResults;
+
 }

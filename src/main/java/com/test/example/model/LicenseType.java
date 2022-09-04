@@ -23,6 +23,6 @@ public class LicenseType implements Serializable {
   @Column(name = "ABBREVIATION", nullable = false)
   private String abbreviation;
 
-  @Column(name = "TITLE", nullable = false)
-  private String name;
+  @Column(name = "DESCRIPTION", nullable = false)
+  private String description;
 }

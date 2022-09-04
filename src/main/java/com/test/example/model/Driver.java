@@ -1,19 +1,13 @@
 package com.test.example.model;
 
-import com.test.example.enums.EyeColor;
-import com.test.example.enums.Gender;
-import com.test.example.enums.HairColor;
-import com.test.example.enums.Race;
-import com.test.example.model.converter.EyeColorAttributeConverter;
-import com.test.example.model.converter.GenderAttributeConverter;
-import com.test.example.model.converter.HairColorAttributeConverter;
-import com.test.example.model.converter.RaceAttributeConverter;
+import com.test.example.constants.ConstraintConstants;
 import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,51 +24,51 @@ public class Driver implements Serializable {
   @Column(name = "_ID", nullable = false)
   private Integer _id;
 
-  @Column(name = "SSN", nullable = false, length = 11)
+  @Column(name = "SSN", nullable = false, updatable = false, length = ConstraintConstants.SSN_LENGTH)
   private String ssn;
 
-  @Column(name = "FIRST_NAME", nullable = false, length = 64)
+  @Column(name = "FIRST_NAME", nullable = false, length = ConstraintConstants.FIRST_NAME_LENGTH)
   private String firstName;
 
-  @Column(name = "MIDDLE_NAME", nullable = false, length = 64)
+  @Column(name = "MIDDLE_NAME", nullable = false, length = ConstraintConstants.MIDDLE_NAME_LENGTH)
   private String middleName;
 
-  @Column(name = "LAST_NAME", nullable = false, length = 64)
+  @Column(name = "LAST_NAME", nullable = false, length = ConstraintConstants.LAST_NAME_LENGTH)
   private String lastName;
 
-  @Column(name = "DATE_OF_BIRTH", nullable = false)
+  @Column(name = "DATE_OF_BIRTH", nullable = false, updatable = false)
   private Date dateOfBirth;
 
-  @Column(name = "ADDRESS_LINE_1", nullable = false, length = 128)
+  @Column(name = "ADDRESS_LINE_1", nullable = false, length = ConstraintConstants.ADDRESS_LINE1_LENGTH)
   private String addressLine1;
 
-  @Column(name = "ADDRESS_LINE_2", length = 64)
+  @Column(name = "ADDRESS_LINE_2", length = ConstraintConstants.ADDRESS_LINE2_LENGTH)
   private String addressLine2;
 
-  @Column(name = "CITY", nullable = false, length = 64)
+  @Column(name = "CITY", nullable = false, length = ConstraintConstants.CITY_LENGTH)
   private String city;
 
-  @Column(name = "STATE", nullable = false, length = 2)
+  @Column(name = "STATE", nullable = false, length = ConstraintConstants.STATE_LENGTH)
   private String state;
 
-  @Column(name = "POSTAL_CODE", nullable = false, length = 5)
+  @Column(name = "POSTAL_CODE", nullable = false, length = ConstraintConstants.POSTAL_CODE_LENGTH)
   private String postalCode;
 
-  @Column(name = "GENDER", nullable = false, length = 1)
-  @Convert(converter = GenderAttributeConverter.class)
-  private Gender gender;
+  @OneToOne
+  @JoinColumn(name = "GENDER_ID", nullable = false) // TODO - Check these associations - is this correct?
+  private DriverGender gender;
 
-  @Column(name = "RACE", nullable = false, length = 1)
-  @Convert(converter = RaceAttributeConverter.class)
-  private Race race;
+  @OneToOne
+  @JoinColumn(name = "RACE_ID", nullable = false)
+  private DriverRace race;
 
-  @Column(name = "HAIR_COLOR", nullable = false, length = 3)
-  @Convert(converter = HairColorAttributeConverter.class)
-  private HairColor hairColor;
+  @OneToOne
+  @JoinColumn(name = "HAIR_COLOR_ID", nullable = false)
+  private DriverHairColor hairColor;
 
-  @Column(name = "EYE_COLOR", nullable = false, length = 3)
-  @Convert(converter = EyeColorAttributeConverter.class)
-  private EyeColor eyeColor;
+  @OneToOne
+  @JoinColumn(name = "EYE_COLOR_ID", nullable = false)
+  private DriverEyeColor eyeColor;
 
   @Column(name = "HEIGHT_INS", nullable = false)
   private Short heightIns;

@@ -1,10 +1,6 @@
 package com.test.example.dto.driver;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.test.example.enums.EyeColor;
-import com.test.example.enums.Gender;
-import com.test.example.enums.HairColor;
-import com.test.example.enums.Race;
 import java.sql.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -49,16 +45,16 @@ public class DriverDto {
   private String postalCode;
 
   @JsonProperty("Gender")
-  private Gender gender;
+  private String gender;
 
   @JsonProperty("Race")
-  private Race race;
+  private String race;
 
   @JsonProperty("HairColor")
-  private HairColor hairColor;
+  private String hairColor;
 
   @JsonProperty("EyeColor")
-  private EyeColor eyeColor;
+  private String eyeColor;
 
   @JsonProperty("HeightInches")
   private Short heightIns;

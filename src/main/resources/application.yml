@@ -13,6 +13,11 @@ management:
     web:
       exposure:
         include: health, info, metrics
+# SpringDoc configurations
+springdoc:
+  api-docs:
+    enabled: true
+  show-actuator: true
 # Spring root configurations
 spring:
   jackson:

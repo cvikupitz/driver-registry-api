@@ -20,7 +20,7 @@ INSERT INTO LICENSE_ENDORSEMENT
   (206, 'S', 'School Bus');
 
 INSERT INTO LICENSE_RESTRICTION
-    (_ID, ABBREVIATION, DESCRIPTION) values
+    (_ID, ABBREVIATION, DESCRIPTION) VALUES
   (301, 'B', 'Corrective Lenses are required while operating a motor vehicle.'),
   (302, 'C', 'A mechanical aid is required to operate a commercial vehicle.'),
   (303, 'D', 'A prosthetic aid is required to operate a commercial vehicle.'),
@@ -34,3 +34,9 @@ INSERT INTO LICENSE_RESTRICTION
   (311, 'O', 'Driver limited to pintail hook trailers only.'),
   (312, 'Z', 'Alcohol Interlock Device required in the commercial vehicle.'),
   (313, 'T', '60-day temporary license.');
+
+INSERT INTO DRIVER
+    (_ID, SSN, FIRST_NAME, MIDDLE_NAME, LAST_NAME, DATE_OF_BIRTH, ADDRESS_LINE_1, ADDRESS_LINE_2,
+     CITY, STATE, POSTAL_CODE, GENDER, RACE, HAIR_COLOR, EYE_COLOR, HEIGHT_INS, WEIGHT_LBS) VALUES
+  (1, '123-45-6789', 'Cole', 'E.', 'Vikupitz', '1994-11-12', '805 Moberly Ln.', NULL,
+   'Bentonville', 'AR', '72758', 'M', 'W', 'BLD', 'GRN', 73, 190);

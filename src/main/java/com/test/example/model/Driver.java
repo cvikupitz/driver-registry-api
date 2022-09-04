@@ -40,9 +40,9 @@ public class Driver implements Serializable {
   @Column(name = "DATE_OF_BIRTH", nullable = false)
   private Date dateOfBirth;
   @Column(name = "ADDRESS_LINE_1", nullable = false, length = 128)
-  private String addresLine1;
+  private String addressLine1;
   @Column(name = "ADDRESS_LINE_2", length = 64)
-  private String addresLine2;
+  private String addressLine2;
   @Column(name = "CITY", nullable = false, length = 64)
   private String city;
   @Column(name = "STATE", nullable = false, length = 2)

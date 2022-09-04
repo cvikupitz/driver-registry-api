@@ -1,8 +1,10 @@
 package com.test.example.mapper;
 
-import com.test.example.dto.metadata.LicenseEndorsementDto;
-import com.test.example.dto.metadata.LicenseRestrictionDto;
-import com.test.example.dto.metadata.LicenseTypeDto;
+import com.test.example.dto.metadata.MetadataDto;
+import com.test.example.model.DriverEyeColor;
+import com.test.example.model.DriverGender;
+import com.test.example.model.DriverHairColor;
+import com.test.example.model.DriverRace;
 import com.test.example.model.LicenseEndorsement;
 import com.test.example.model.LicenseRestriction;
 import com.test.example.model.LicenseType;
@@ -12,15 +14,31 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface MetadataMapper {
 
-  LicenseTypeDto mapLicenseModelToDto(LicenseType licenseType);
+  MetadataDto mapDriverEyeColorModelToDto(DriverEyeColor eyeColor);
 
-  List<LicenseTypeDto> mapMultipleLicenseTypeModelsToDto(List<LicenseType> licenseTypes);
+  List<MetadataDto> mapMultipleDriverEyeColorModelsToDto(List<DriverEyeColor> eyeColors);
 
-  LicenseEndorsementDto mapLicenseEndorsementToDto(LicenseEndorsement licenseEndorsement);
+  MetadataDto mapDriverGenderModelToDto(DriverGender gender);
 
-  List<LicenseEndorsementDto> mapMultipleLicenseEndorsementModelsToDto(List<LicenseEndorsement> licenseEndorsements);
+  List<MetadataDto> mapMultipleDriverGenderModelsToDto(List<DriverGender> genders);
 
-  LicenseRestrictionDto mapLicenseRestrictionToDto(LicenseRestriction licenseRestriction);
+  MetadataDto mapDriverHairColorModelToDto(DriverHairColor hairColor);
 
-  List<LicenseRestrictionDto> mapMultipleLicenseRestrictionModelsToDto(List<LicenseRestriction> licenseRestrictions);
+  List<MetadataDto> mapMultipleDriverHairColorModelsToDto(List<DriverHairColor> hairColors);
+
+  MetadataDto mapDriverRaceModelToDto(DriverRace race);
+
+  List<MetadataDto> mapMultipleDriverRaceModelsToDto(List<DriverRace> races);
+
+  MetadataDto mapLicenseModelToDto(LicenseType licenseType);
+
+  List<MetadataDto> mapMultipleLicenseTypeModelsToDto(List<LicenseType> licenseTypes);
+
+  MetadataDto mapLicenseEndorsementToDto(LicenseEndorsement licenseEndorsement);
+
+  List<MetadataDto> mapMultipleLicenseEndorsementModelsToDto(List<LicenseEndorsement> licenseEndorsements);
+
+  MetadataDto mapLicenseRestrictionToDto(LicenseRestriction licenseRestriction);
+
+  List<MetadataDto> mapMultipleLicenseRestrictionModelsToDto(List<LicenseRestriction> licenseRestrictions);
 }

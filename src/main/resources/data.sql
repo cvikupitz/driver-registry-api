@@ -1,5 +1,5 @@
 INSERT INTO LICENSE_TYPE
-    (_ID, ABBREVIATION, TITLE) VALUES
+    (_ID, ABBREVIATION, DESCRIPTION) VALUES
   (101, 'D', 'Unrestricted'),
   (102, 'DJ', 'Provisional/Junior'),
   (103, 'A', 'Commercial License A'),
@@ -35,8 +35,44 @@ INSERT INTO LICENSE_RESTRICTION
   (312, 'Z', 'Alcohol Interlock Device required in the commercial vehicle.'),
   (313, 'T', '60-day temporary license.');
 
+INSERT INTO DRIVER_GENDER
+    (_ID, ABBREVIATION, DESCRIPTION) VALUES
+  (401, 'M', 'Male'),
+  (402, 'F', 'Female'),
+  (403, 'U', 'Undisclosed/Unknown');
+
+INSERT INTO DRIVER_RACE
+    (_ID, ABBREVIATION, DESCRIPTION) VALUES
+  (501, 'A', 'Asian/Pacific Islander'),
+  (502, 'B', 'Black'),
+  (503, 'W', 'White'),
+  (504, 'H', 'Hispanic'),
+  (505, 'I', 'Native American/Alaskan Native'),
+  (506, 'U', 'Other/Unknown');
+
+INSERT INTO DRIVER_HAIR_COLOR
+    (_ID, ABBREVIATION, DESCRIPTION) VALUES
+  (601, 'BLK', 'Black'),
+  (602, 'BRO', 'Brown'),
+  (603, 'BLD', 'Blonde'),
+  (604, 'GRY', 'Gray'),
+  (605, 'WHI', 'White'),
+  (606, 'RED', 'Red'),
+  (607, 'BAL', 'Bald'),
+  (608, 'U', 'Other/Unknown');
+
+INSERT INTO DRIVER_EYE_COLOR
+    (_ID, ABBREVIATION, DESCRIPTION) VALUES
+  (701, 'BLK', 'Black'),
+  (702, 'BLU', 'Blue'),
+  (703, 'BRO', 'Brown'),
+  (704, 'GRY', 'Gray'),
+  (705, 'GRN', 'Green'),
+  (706, 'HZL', 'Hazel'),
+  (707, 'U', 'Other/Unknown');
+
 INSERT INTO DRIVER
     (_ID, SSN, FIRST_NAME, MIDDLE_NAME, LAST_NAME, DATE_OF_BIRTH, ADDRESS_LINE_1, ADDRESS_LINE_2,
-     CITY, STATE, POSTAL_CODE, GENDER, RACE, HAIR_COLOR, EYE_COLOR, HEIGHT_INS, WEIGHT_LBS) VALUES
+     CITY, STATE, POSTAL_CODE, GENDER_ID, RACE_ID, HAIR_COLOR_ID, EYE_COLOR_ID, HEIGHT_INS, WEIGHT_LBS) VALUES
   (1, '123-45-6789', 'Cole', 'E.', 'Vikupitz', '1994-11-12', '805 Moberly Ln.', NULL,
-   'Bentonville', 'AR', '72758', 'M', 'W', 'BLD', 'GRN', 73, 190);
+   'Bentonville', 'AR', '72758', 401, 503, 603, 705, 73, 190);

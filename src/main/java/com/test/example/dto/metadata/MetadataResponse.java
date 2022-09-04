@@ -12,11 +12,24 @@ import lombok.NoArgsConstructor;
 public class MetadataResponse {
 
   @JsonProperty("LicenseTypes")
-  private List<LicenseTypeDto> licenseTypes;
+  private List<MetadataDto> licenseTypes;
 
   @JsonProperty("LicenseEndorsements")
-  private List<LicenseEndorsementDto> licenseEndorsements;
+  private List<MetadataDto> licenseEndorsements;
 
   @JsonProperty("LicenseRestrictions")
-  private List<LicenseRestrictionDto> licenseRestrictions;
+  private List<MetadataDto> licenseRestrictions;
+
+  @JsonProperty("DriverGenders")
+  private List<MetadataDto> driverGenders;
+
+  @JsonProperty("DriverRaces")
+  private List<MetadataDto> driverRaces;
+
+  @JsonProperty("DriverHairColors")
+  private List<MetadataDto> driverHairColors;
+
+  @JsonProperty("DriverEyeColors")
+  private List<MetadataDto> driverEyeColors;
+
 }

@@ -19,8 +19,10 @@ public class LicenseType implements Serializable {
   @Id
   @Column(name = "_ID", nullable = false)
   private Integer _id;
+
   @Column(name = "ABBREVIATION", nullable = false)
   private String abbreviation;
+
   @Column(name = "TITLE", nullable = false)
   private String name;
 }

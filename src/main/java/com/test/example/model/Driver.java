@@ -29,40 +29,57 @@ public class Driver implements Serializable {
   @Id
   @Column(name = "_ID", nullable = false)
   private Integer _id;
+
   @Column(name = "SSN", nullable = false, length = 11)
   private String ssn;
+
   @Column(name = "FIRST_NAME", nullable = false, length = 64)
   private String firstName;
+
   @Column(name = "MIDDLE_NAME", nullable = false, length = 64)
   private String middleName;
+
   @Column(name = "LAST_NAME", nullable = false, length = 64)
   private String lastName;
+
   @Column(name = "DATE_OF_BIRTH", nullable = false)
   private Date dateOfBirth;
+
   @Column(name = "ADDRESS_LINE_1", nullable = false, length = 128)
   private String addressLine1;
+
   @Column(name = "ADDRESS_LINE_2", length = 64)
   private String addressLine2;
+
   @Column(name = "CITY", nullable = false, length = 64)
   private String city;
+
   @Column(name = "STATE", nullable = false, length = 2)
   private String state;
+
   @Column(name = "POSTAL_CODE", nullable = false, length = 5)
   private String postalCode;
+
   @Column(name = "GENDER", nullable = false, length = 1)
   @Convert(converter = GenderAttributeConverter.class)
   private Gender gender;
+
   @Column(name = "RACE", nullable = false, length = 1)
   @Convert(converter = RaceAttributeConverter.class)
   private Race race;
+
   @Column(name = "HAIR_COLOR", nullable = false, length = 3)
   @Convert(converter = HairColorAttributeConverter.class)
   private HairColor hairColor;
+
   @Column(name = "EYE_COLOR", nullable = false, length = 3)
   @Convert(converter = EyeColorAttributeConverter.class)
   private EyeColor eyeColor;
+
   @Column(name = "HEIGHT_INS", nullable = false)
   private Short heightIns;
+
   @Column(name = "WEIGHT_LBS", nullable = false)
   private Short weightLbs;
+
 }

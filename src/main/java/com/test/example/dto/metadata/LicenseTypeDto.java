@@ -12,8 +12,10 @@ public class LicenseTypeDto {
 
   @JsonProperty("LicenseTypeId")
   private Integer _id;
+
   @JsonProperty("LicenseTypeAbbr")
   private String abbreviation;
+
   @JsonProperty("LicenseTypeName")
   private String name;
 }

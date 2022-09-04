@@ -12,8 +12,10 @@ public class LicenseRestrictionDto {
 
   @JsonProperty("LicenseRestrictionId")
   private Integer _id;
+
   @JsonProperty("LicenseRestrictionAbbr")
   private String abbreviation;
+
   @JsonProperty("LicenseRestrictionDesc")
   private String description;
 }

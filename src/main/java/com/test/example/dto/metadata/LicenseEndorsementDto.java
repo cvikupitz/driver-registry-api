@@ -12,8 +12,10 @@ public class LicenseEndorsementDto {
 
   @JsonProperty("LicenseEndorsementId")
   private Integer _id;
+
   @JsonProperty("LicenseEndorsementAbbr")
   private String abbreviation;
+
   @JsonProperty("LicenseEndorsementDesc")
   private String description;
 }

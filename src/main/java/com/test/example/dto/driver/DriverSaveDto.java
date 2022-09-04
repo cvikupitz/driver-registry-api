@@ -5,7 +5,8 @@ import com.test.example.enums.EyeColor;
 import com.test.example.enums.Gender;
 import com.test.example.enums.HairColor;
 import com.test.example.enums.Race;
-import java.sql.Date;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,17 +14,18 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DriverDto {
-
-  @JsonProperty("DriverId")
-  private Integer _id;
+public class DriverSaveDto {
 
   @JsonProperty("SSN")
+  @NotBlank(message = "'SSN' cannot be null, empty, or blank.")
+  @Pattern(regexp = "", message = "")
   private String ssn;
 
+  @NotBlank(message = "'FirstName' cannot be null, empty, or blank.")
   @JsonProperty("FirstName")
   private String firstName;
 
+  @NotBlank(message = "'FirstName' cannot be null, empty, or blank.")
   @JsonProperty("MiddleName")
   private String middleName;
 
@@ -31,7 +33,7 @@ public class DriverDto {
   private String lastName;
 
   @JsonProperty("DateOfBirth")
-  private Date dateOfBirth;
+  private String dateOfBirth;
 
   @JsonProperty("AddressLine1")
   private String addressLine1;
@@ -65,5 +67,4 @@ public class DriverDto {
 
   @JsonProperty("WeightLbs")
   private Short weightLbs;
-
 }

@@ -13,8 +13,10 @@ public class MetadataResponse {
 
   @JsonProperty("LicenseTypes")
   private List<LicenseTypeDto> licenseTypes;
+
   @JsonProperty("LicenseEndorsements")
   private List<LicenseEndorsementDto> licenseEndorsements;
+
   @JsonProperty("LicenseRestrictions")
   private List<LicenseRestrictionDto> licenseRestrictions;
 }

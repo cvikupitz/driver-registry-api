@@ -46,7 +46,7 @@ INSERT INTO DRIVER_RACE
   (501, 'W', 'White'),
   (502, 'B', 'Black'),
   (503, 'I', 'Native American/Alaskan Native'),
-  (504, 'A', 'Asian')
+  (504, 'A', 'Asian'),
   (505, 'H', 'Hispanic'),
   (506, 'I', 'Native Hawaiian/Pacific Islander'),
   (507, 'U', 'Other/Unknown');

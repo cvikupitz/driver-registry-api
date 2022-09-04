@@ -1,0 +1,10 @@
+GET /api/v1/health-check
+GET /api/v1/metadata
+
+GET    /api/v1/drivers
+GET    /api/v1/drivers/{id}
+GET    /api/v1/drivers/{id}/licenses
+POST   /api/v1/drivers
+POST   /api/v1/drivers/search
+PUT    /api/v1/drivers/{id}
+DELETE /api/v1/drivers/{id}

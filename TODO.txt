@@ -1,4 +1,5 @@
 - Valid groups
+- Deep health check
 - Swagger
 - Caching
 - Security

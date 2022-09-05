@@ -5,6 +5,8 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -21,8 +23,9 @@ import lombok.NoArgsConstructor;
 public class Driver implements Serializable {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "_ID", nullable = false)
-  private Integer _id;
+  private Long _id;
 
   @Column(name = "SSN", nullable = false, updatable = false, length = ConstraintConstants.SSN_LENGTH)
   private String ssn;
@@ -71,9 +74,9 @@ public class Driver implements Serializable {
   private DriverEyeColor eyeColor;
 
   @Column(name = "HEIGHT_INS", nullable = false)
-  private Short heightIns;
+  private Integer heightIns;
 
   @Column(name = "WEIGHT_LBS", nullable = false)
-  private Short weightLbs;
+  private Integer weightLbs;
 
 }

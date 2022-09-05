@@ -1,5 +1,6 @@
 package com.test.example.controller;
 
+import com.test.example.constants.EndpointConstants;
 import com.test.example.dto.metadata.MetadataResponse;
 import com.test.example.service.MetadataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(
-    path = "/api/v1/metadata",
+    path = EndpointConstants.METADATA_URI,
     produces = MediaType.APPLICATION_JSON_VALUE)
 public class MetadataController {
 
@@ -21,6 +22,7 @@ public class MetadataController {
 
   @GetMapping
   public ResponseEntity<MetadataResponse> getAllMetadata() {
+
     MetadataResponse payload = metadataService.getAllMetadata();
     return new ResponseEntity<>(payload, HttpStatus.OK);
   }

@@ -38,9 +38,9 @@ public class DriverGenericSearchRequest {
 //
 //  private EyeColor eyeColor;
 
-  private Short heightIns;
+  private Integer heightIns;
 
-  private Short weightLbs;
+  private Integer weightLbs;
 
   private Integer maxResults;
 

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class DriverDto {
 
   @JsonProperty("DriverId")
-  private Integer _id;
+  private Long _id;
 
   @JsonProperty("SSN")
   private String ssn;
@@ -58,9 +58,9 @@ public class DriverDto {
   private MetadataDto eyeColor;
 
   @JsonProperty("HeightInches")
-  private Short heightIns;
+  private Integer heightIns;
 
   @JsonProperty("WeightLbs")
-  private Short weightLbs;
+  private Integer weightLbs;
 
 }

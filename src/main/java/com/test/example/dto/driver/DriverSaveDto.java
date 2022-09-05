@@ -8,11 +8,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Pattern.Flag;
 import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Range;
 
 @Data
 @NoArgsConstructor
@@ -99,43 +99,47 @@ public class DriverSaveDto {
   @JsonProperty("PostalCode")
   private String postalCode;
 
-  @NotBlank(message = "'Gender' cannot be null, empty, or blank.")
-  @Pattern(
-      regexp = ConstraintConstants.GENDER_PATTERN,
-      flags = Flag.CASE_INSENSITIVE,
-      message = "'Gender' must conform to the pattern " + ConstraintConstants.GENDER_PATTERN)
-  @JsonProperty("Gender")
-  private String gender;
+  @NotNull(message = "'GenderCode' cannot be null.")
+  @Range(
+      min = ConstraintConstants.MIN_GENDER_CODE,
+      max = ConstraintConstants.MAX_GENDER_CODE,
+      message = "'GenderCode' must be in the range: [" + ConstraintConstants.MIN_GENDER_CODE +
+                ", " + ConstraintConstants.MAX_GENDER_CODE + "].")
+  @JsonProperty("GenderCode")
+  private Integer genderCode;
 
-  @NotBlank(message = "'Race' cannot be null, empty, or blank.")
-  @Pattern(
-      regexp = ConstraintConstants.RACE_PATTERN,
-      flags = Flag.CASE_INSENSITIVE,
-      message = "'Race' must conform to the pattern " + ConstraintConstants.RACE_PATTERN)
-  @JsonProperty("Race")
-  private String race;
+  @NotNull(message = "'RaceCode' cannot be null.")
+  @Range(
+      min = ConstraintConstants.MIN_RACE_CODE,
+      max = ConstraintConstants.MAX_RACE_CODE,
+      message = "'RaceCode' must be in the range: [" + ConstraintConstants.MIN_RACE_CODE +
+                ", " + ConstraintConstants.MAX_RACE_CODE + "].")
+  @JsonProperty("RaceCode")
+  private Integer raceCode;
 
-  @NotBlank(message = "'HairColor' cannot be null, empty, or blank.")
-  @Pattern(
-      regexp = ConstraintConstants.HAIR_COLOR_PATTERN,
-      flags = Flag.CASE_INSENSITIVE,
-      message = "'HairColor' must conform to the pattern " + ConstraintConstants.HAIR_COLOR_PATTERN)
-  @JsonProperty("HairColor")
-  private String hairColor;
+  @NotNull(message = "'HairColorCode' cannot be null.")
+  @Range(
+      min = ConstraintConstants.MIN_HAIR_COLOR_CODE,
+      max = ConstraintConstants.MAX_HAIR_COLOR_CODE,
+      message = "'HairColorCode' must be in the range: [" + ConstraintConstants.MIN_HAIR_COLOR_CODE +
+                ", " + ConstraintConstants.MAX_HAIR_COLOR_CODE + "].")
+  @JsonProperty("HairColorCode")
+  private Integer hairColorCode;
 
-  @NotBlank(message = "'EyeColor' cannot be null, empty, or blank.")
-  @Pattern(
-      regexp = ConstraintConstants.EYE_COLOR_PATTERN,
-      flags = Flag.CASE_INSENSITIVE,
-      message = "'EyeColor' must conform to the pattern " + ConstraintConstants.EYE_COLOR_PATTERN)
-  @JsonProperty("EyeColor")
-  private String eyeColor;
+  @NotNull(message = "'EyeColorCode' cannot be null.")
+  @Range(
+      min = ConstraintConstants.MIN_EYE_COLOR_CODE,
+      max = ConstraintConstants.MAX_EYE_COLOR_CODE,
+      message = "'EyeColorCode' must be in the range: [" + ConstraintConstants.MIN_EYE_COLOR_CODE +
+                ", " + ConstraintConstants.MAX_EYE_COLOR_CODE + "].")
+  @JsonProperty("EyeColorCode")
+  private Integer eyeColorCode;
 
   @NotNull(message = "'HeightInches' cannot be null.")
   @JsonProperty("HeightInches")
-  private Short heightIns;
+  private Integer heightIns;
 
   @NotNull(message = "'WeightLbs' cannot be null.")
   @JsonProperty("WeightLbs")
-  private Short weightLbs;
+  private Integer weightLbs;
 }
